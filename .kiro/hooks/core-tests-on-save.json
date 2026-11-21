@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Core tests on save",
+      "description": "Runs the pure core's unit and property tests whenever the agent edits src/core. Failures go straight back to the agent.",
+      "trigger": "PostFileSave",
+      "matcher": "src[\\\\/]core[\\\\/].*\\.ts$",
+      "action": { "type": "command", "command": "npm run test:core --silent" },
+      "timeout": 180,
+      "enabled": true
+    }
+  ]
+}

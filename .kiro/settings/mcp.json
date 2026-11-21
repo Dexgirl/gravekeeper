@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gravekeeper": {
+      "command": "npx",
+      "args": ["tsx", "src/mcp/server.ts"],
+      "env": { "GRAVEKEEPER_DATA_DIR": "data" },
+      "disabled": true,
+      "autoApprove": ["get_case", "get_repair_plan", "check_dependencies"]
+    }
+  }
+}

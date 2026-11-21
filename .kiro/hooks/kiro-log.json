@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Log finished tasks",
+      "description": "Appends one line (time, spec, task, diff size) to KIRO_LOG.md after every spec task. An automatic build diary for the judges, at zero credits.",
+      "trigger": "PostTaskExec",
+      "action": { "type": "command", "command": "node scripts/hooks/kiro-log.mjs" },
+      "timeout": 15,
+      "enabled": true
+    }
+  ]
+}

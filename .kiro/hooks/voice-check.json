@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Voice check on copy",
+      "description": "Flags banned words from voice.md (graveyard, headstone, killed, AI-powered, skull emojis) in website copy and the README.",
+      "trigger": "PostFileSave",
+      "matcher": "(web[\\\\/]src[\\\\/].*\\.(tsx?|css)|README\\.md)$",
+      "action": { "type": "command", "command": "node scripts/hooks/voice-check.mjs" },
+      "timeout": 10,
+      "enabled": true
+    }
+  ]
+}

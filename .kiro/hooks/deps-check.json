@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Gravekeeper checks its own dependencies",
+      "description": "Dogfooding: when the agent edits package.json, look up every dependency in data/morgue.json and warn about DORMANT or DEAD ones.",
+      "trigger": "PostFileSave",
+      "matcher": "(^|[\\\\/])package\\.json$",
+      "action": { "type": "command", "command": "node scripts/hooks/deps-check.mjs" },
+      "timeout": 10,
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Guard shell commands",
+      "description": "Blocks npm publish, git push, hard resets, recursive deletes, curl-pipe-to-shell and banned dependencies before they run. Exit code 2 refuses the tool call and tells the agent why.",
+      "trigger": "PreToolUse",
+      "action": { "type": "command", "command": "node scripts/hooks/guard-shell.mjs" },
+      "timeout": 10,
+      "enabled": true
+    }
+  ]
+}
